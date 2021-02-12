@@ -1,56 +1,72 @@
 /* подключение шрифтов*/
 @font-face {
     font-family: 'TT Lakes';
-    src: url('TTLakes-Bold.eot');
-    src: local('TT Lakes Bold'), local('TTLakes-Bold'),
-    url('TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
-    url('TTLakes-Bold.woff') format('woff'),
-    url('TTLakes-Bold.ttf') format('truetype');
+    src: url('fonts/TTLakes-Bold.eot');
+    src: local('fonts/TT Lakes Bold'), local('fonts/TTLakes-Bold'),
+    url('fonts/TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/TTLakes-Bold.woff') format('woff'),
+    url('fonts/TTLakes-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: 'TT Lakes';
-    src: url('TTLakes-Medium.eot');
-    src: local('TT Lakes Medium'), local('TTLakes-Medium'),
-    url('TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
-    url('TTLakes-Medium.woff') format('woff'),
-    url('TTLakes-Medium.ttf') format('truetype');
+    src: url('fonts/TTLakes-Medium.eot');
+    src: local('fonts/TT Lakes Medium'), local('fonts/TTLakes-Medium'),
+    url('fonts/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
+    url('fonts/TTLakes-Medium.woff') format('woff'),
+    url('fonts/TTLakes-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'TT Lakes Condensed';
-    src: url('TTLakesCondensed-Regular.eot');
-    src: local('TT Lakes Condensed Regular'), local('TTLakesCondensed-Regular'),
-    url('TTLakesCondensed-Regular.eot?#iefix') format('embedded-opentype'),
-    url('TTLakesCondensed-Regular.woff') format('woff'),
-    url('TTLakesCondensed-Regular.ttf') format('truetype');
+    src: url('fonts/TTLakesCondensed-Regular.eot');
+    src: local('fonts/TT Lakes Condensed Regular'), local('fonts/TTLakesCondensed-Regular'),
+    url('fonts/TTLakesCondensed-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/TTLakesCondensed-Regular.woff') format('woff'),
+    url('fonts/TTLakesCondensed-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'TT Lakes';
-    src: url('TTLakes-Medium.eot');
-    src: local('TT Lakes Medium'), local('TTLakes-Medium'),
-    url('TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
-    url('TTLakes-Medium.woff') format('woff'),
-    url('TTLakes-Medium.ttf') format('truetype');
-    font-weight: 500;
+    src: url('fonts/TTLakes-Regular.eot');
+    src: local('fonts/TT Lakes Regular'), local('fonts/TTLakes-Regular'),
+    url('fonts/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/TTLakes-Regular.woff') format('woff'),
+    url('fonts/TTLakes-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
 }
 /*основные стили*/
-.main {
+body {
+    min-width: 320px;
+    max-width: 1120px;
+    margin: 0;
+    padding: 0;
+    background: #F8F8F8;
 }
+/*хедер*/
 .header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 88px;
+    background-color: white;
 }
+/*Кнопки хедера*/
+.headerButton button {
+    border: none;
+    outline: none;
+    background-color: #FFFFFF;
+    padding: 0px;
+}
+/*Скрытие лишних кнопок под разрешения*/
 .header__section div:nth-of-type(2), div:nth-of-type(5), div:nth-of-type(6), div:nth-of-type(7), div:nth-of-type(8)  {
     display:none;
 }
+/*Контейнер хедера*/
 .header .header__section {
     display: flex;
     flex-direction: row;
@@ -63,22 +79,24 @@
     border-radius: 1px;
     background: #EAEAEA;
 }
-.main__highlight {
+/*Заголовок*/
+.title__highlight {
     width: 4px;
     height: 40px;
     background: #41f6d7;
 }
 .main__section {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: #F8F8F8;
     padding-bottom: 35px;
 }
-.main__title {
+.title {
     display: flex;
     margin-top: 24px;
 }
-.main__title span {
+.title span {
     font-family: 'TT Lakes';
     font-weight: bold;
     font-style: normal;
@@ -88,20 +106,9 @@
     line-height: 40px;
     letter-spacing: -0.6px;
 }
-.main__title a:nth-of-type(1), a:nth-of-type(2) {
+/*скрытие кнопок и текста главного блока*/
+.title button:nth-of-type(1), button:nth-of-type(2) {
     display: none;
-}
-.main__text {
-    margin-top: 24px;
-    font-family: 'TT Lakes Condensed';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 0.2px;
-    color: #1B1C21;
-    margin-left:16px;
-    margin-right: 16px;
 }
 .container div span {
     display: none;
@@ -109,13 +116,31 @@
 
 .main .main__section .main__menu {
     margin-left: 16px;
-    margin-top: 32px;
+    margin-top: 24px;
     display: flex;
     flex-direction: row;
     align-items: center;
     overflow: scroll;
 }
-
+.main .main__section .main__menu:after {
+    position:absolute;
+    content:"";
+    right:0px;
+    top: 98px;
+    width: 30px;
+    height:36px;
+    background: linear-gradient(to right, rgba(0,0,0,0),  #F8F8F8);
+}
+.main__menu nav ul{
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.main__menu nav ul li{
+    list-style-type: none;
+}
 .main__menu a {
     padding: 8px 16.5px 8px 16.5px;
     margin-right: 20px;
@@ -129,20 +154,41 @@
     line-height: 24px;
     letter-spacing: -0.2px;
 }
-.main__info .container {
+.main__menu a:hover {
+    border: 2px solid #B8FFEC;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 6px 14.5px 6px 14.5px;
+}
+/*Контейнер о компании*/
+.about-company .container {
     display: flex;
     flex-direction: column;
 }
-.main__link {
+/*Текст о компании*/
+.about-company__description {
+    margin-top: 24px;
+    font-family: 'TT Lakes Regular';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #1B1C21;
+    margin-left:16px;
+    margin-right: 16px;
+}
+/*Ссылка читать далее*/
+.about-company__link {
     margin-top: 16px;
     margin-bottom: 16px;
 }
-.main__link::before {
+.about-company__link::before {
     content: url(img/icon.svg);
     margin-right: 16px;
     margin-left: 24px;
 }
-.main__link a {
+.about-company__link a {
     text-decoration: none;
     font-family: 'TT Lakes';
     font-weight: 500;
@@ -152,19 +198,15 @@
     letter-spacing: -0.2px;
     color: #1B1C21;
 }
-.main__main__image {
+/*Картинка снизу, блок*/
+.about-company__image {
     margin-top: 16px;
     margin-bottom: 35px;
 }
-.main__main__image img {
+/*Картинка снизу*/
+.about-company__image img {
     width: 100%;
     height: auto;
-}
-.main__menu a:hover {
-    border: 2px solid #B8FFEC;
-    box-sizing: border-box;
-    border-radius: 6px;
-    padding: 6px 14.5px 6px 14.5px;
 }
 /* свойства скролла */
 .main__menu::-webkit-scrollbar { width: 0; }
@@ -178,20 +220,20 @@
     .header__section div:nth-of-type(4) {
         display: none;
     }
-    .main__info {
+    .about-company {
         display: flex;
     }
     .container div span:nth-of-type(1) {
         display: initial;
     }
-    .main__main__image {
+    .about-company__image {
         min-width: 360px;
         margin-right: 25px;
     }
-    .main__main__image img{
+    .about-company__image img{
         border-radius: 6px;
     }
-    .main__link {
+    .about-company__link {
         margin-top: 10px;
     }
     .header .header__section div {
@@ -217,11 +259,11 @@
         align-items: center;
         justify-content: initial;
     }
-    .main__text {
+    .about-company__description {
         margin-left:24px;
         margin-right:48px;
     }
-    .main__link::before {
+    .about-company__link::before {
         margin-left: 33px;
     }
     .main .main__section .main__menu {
@@ -235,44 +277,49 @@
     .header {
         display: none;
     }
-    .main__title a:nth-of-type(1), a:nth-of-type(2) {
+    .title button:nth-of-type(1), button:nth-of-type(2) {
         display: flex;
     }
-    .main__title a:nth-of-type(1) {
+    .title button:nth-of-type(1) {
         margin-left: auto;
         margin-right: 32px;
     }
-    .main__title a:nth-of-type(2) {
+    .title button:nth-of-type(2) {
         margin-right: 32px;
     }
-    .main__main__image {
+    .about-company__image {
         min-width: 530px;
         margin-right: 29px;
     }
-    .main__title a {
-        text-decoration: none;
-        font-family: "TT Lakes Regular";
+    .title button {
+        display: flex;
+        align-items: center;
+        font-family: "TT Lakes";
+        font-weight: 500;
+        font-style: normal;
         font-size: 16px;
         line-height: 24px;
         letter-spacing: -0.2px;
         color: #1B1C21;
-        vertical-align: initial;
+        border: none;
+        outline: none;
+        background-color:#F8F8F8;
     }
-    .main__title img {
+    .title img {
         margin-left: 8px;
     }
-    .main__title a {
+    .title a {
         display: flex;
         align-items: center;
     }
     .container div span:nth-of-type(2) {
         display: initial;
     }
-    .main__text {
+    .about-company__description {
         margin-left:34px;
         margin-right:36px;
     }
-    .main__link::before {
+    .about-company__link::before {
         margin-left: 40px;
     }
     .main .main__section .main__menu {
@@ -287,4 +334,17 @@
     .main__section {
         padding-bottom: 49px;
     }
+    .main .main__section .main__menu:after {
+        display: none;
+    }
+    .main__menu nav ul{
+        flex-wrap: wrap;
+    }
+    .main__menu nav ul li {
+        display: inline-block;
+    }
+    .main__menu nav ul li:nth-of-type(5), li:nth-of-type(6) {
+        margin-top: 16px;
+    }
+
 }
