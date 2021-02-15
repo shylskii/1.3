@@ -30,7 +30,7 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'TT Lakes';
+    font-family: 'TT Lakes Regular';
     src: url('fonts/TTLakes-Regular.eot');
     src: local('fonts/TT Lakes Regular'), local('fonts/TTLakes-Regular'),
     url('fonts/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
@@ -41,18 +41,18 @@
 }
 /*основные стили*/
 body {
-    min-width: 320px;
-    max-width: 1120px;
     margin: 0;
     padding: 0;
+    background: #F2F2F2;
+}
+.body-container {
+    min-width: 320px;
+    max-width: 1120px;
     background: #F8F8F8;
+    margin:0 auto;
 }
 /*хедер*/
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 88px;
     background-color: white;
 }
 /*Кнопки хедера*/
@@ -63,21 +63,31 @@ body {
     padding: 0px;
 }
 /*Скрытие лишних кнопок под разрешения*/
-.header__section div:nth-of-type(2), div:nth-of-type(5), div:nth-of-type(6), div:nth-of-type(7), div:nth-of-type(8)  {
-    display:none;
+.header-section div:nth-of-type(2), div:nth-of-type(6) {
+    display: none;
+}
+.header-container {
+    display: flex;
+    flex-direction: column;
+    display: none;
 }
 /*Контейнер хедера*/
-.header .header__section {
+.header .header-section {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    height: 88px;
 }
 .divider {
     width: 2px;
     height: 32px;
     border-radius: 1px;
     background: #EAEAEA;
+}
+.contact-block {
+    display: flex;
+    flex-direction: row;
 }
 /*Заголовок*/
 .title__highlight {
@@ -214,10 +224,10 @@ body {
 .main__menu { overflow: -moz-scrollbars-none; }
 /* медиа запросы*/
 @media (min-width: 768px) {
-    .header__section div:nth-of-type(2), div:nth-of-type(5), div:nth-of-type(6), div:nth-of-type(7), div:nth-of-type(8)  {
+    .header-section div:nth-of-type(2), div:nth-of-type(5), div:nth-of-type(6)  {
         display: flex;
     }
-    .header__section div:nth-of-type(4) {
+    .header-section div:nth-of-type(4) {
         display: none;
     }
     .about-company {
@@ -236,24 +246,31 @@ body {
     .about-company__link {
         margin-top: 10px;
     }
-    .header .header__section div {
+    .header .header-section div {
         margin-right: 16px;
     }
-    .header .header__section div:first-of-type {
+    .header .header-section div:first-of-type {
         margin-left: 24px;
     }
-    .header .header__section div:last-of-type {
+    .header .header-section div:last-of-type {
         margin-right: 24px;
     }
 
-    .header .header__section div.divider {
+    .header .header-section div.divider {
         margin-right: 20px;
         margin-left: 4px;
     }
-    .header .header__section div:nth-of-type(5){
+    .header-container {
+        margin-right:0 !important;
         margin-left: auto;
     }
-    .header .header__section {
+    .contact-block {
+        margin: 0 !important;
+    }
+    .contact-block div:last-of-type {
+        margin-right: 16px !important;
+    }
+    .header .header-section {
         display: flex;
         flex-direction: row;
         align-items: center;
