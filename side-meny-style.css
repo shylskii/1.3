@@ -41,7 +41,7 @@ button {
     background-color: #FFFFFF;
     padding: 0;
 }
-button:hover {
+button:hover, button:focus {
     transition-duration: 4s;
     opacity: 0.33;
 }
@@ -50,6 +50,10 @@ button:hover {
 }
 .header__image {
     margin-left: 16px;
+}
+.headerLogo:hover, .headerLogo:focus {
+    transform: scale(1.1);
+    transition-duration: 1s;
 }
 .main-menu__list, .main-menu__item {
     padding:0;
@@ -61,6 +65,7 @@ button:hover {
 .main-menu__item {
     list-style-type: none;
     margin-top: 24px;
+    transition-duration: 300ms;
 }
 .main-menu__item a {
     position: relative;
@@ -74,7 +79,7 @@ button:hover {
 .main-menu__item a:before {
     content: "";
     position: absolute;
-    left: -24px;
+    left: -44px;
     top: -4px;
     display: inline-block;
     width: 4px;
@@ -85,8 +90,14 @@ button:hover {
 .main-menu__item a:visited {
     color: #7E7E82;
 }
-.main-menu__item a:hover:before {
+.main-menu__item a:hover:before, .main-menu__item:focus a:before {
     display: inline-block;
+}
+.main-menu__item:hover {
+    transform: translateX(20px);
+}
+.main-menu__item:focus {
+    transform: translateX(20px);
 }
 .info {
     display: flex;
@@ -99,8 +110,22 @@ button:hover {
 .info-buttons__button {
     margin-right: 16px;
 }
-.info-text {
+.info-mail:hover, .info-mail:focus {
+    transform: translateX(10px);
+}
+.info-number:hover, .info-number:focus {
+    transform: translateX(10px);
+}
+.info-mail {
     margin-top: 16px;
+    transition-duration: 500ms;
+}
+.info-number {
+    margin-top: 16px;
+    transition-duration: 500ms;
+}
+.info-mail a {
+    text-decoration: none;
     font-family: "TT Lakes Medium";
     font-style: normal;
     font-weight: 500;
@@ -111,6 +136,9 @@ button:hover {
 }
 .info-number {
     margin-top: 12px;
+}
+.info-number a {
+    text-decoration: none;
     font-family: TT Lakes;
     font-style: normal;
     font-weight: bold;
@@ -126,6 +154,9 @@ button:hover {
 }
 .lang__button {
     margin-right: 7px;
+}
+.lang__button:hover, .lang__button:focus {
+    transform: translateY(5px);
 }
 .lang__button button {
     font-family: "TT Lakes Medium";
