@@ -42,8 +42,9 @@ button {
     padding: 0;
 }
 button:hover, button:focus {
-    transition-duration: 4s;
+    transition-duration: 0.5s;
     opacity: 0.33;
+    cursor: pointer;
 }
 .search-button {
     margin-left: auto;
