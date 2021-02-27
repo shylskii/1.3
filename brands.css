@@ -19,9 +19,16 @@
     font-weight: normal;
     font-style: normal;
 }
+body {
+    margin: 0;
+    padding: 0;
+}
 
 .brands {
     width: 320px;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #D9FFF5;
 }
 .brands-about {
     padding: 16px;
@@ -70,4 +77,107 @@
     line-height: 12px;
     font-size: 14px;
     background: #B5B6BC;
+}
+.button-share {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .brands {
+        width: 768px;
+    }
+    .image-slider {
+        display: flex;
+        flex-direction: column;
+    }
+    .image-slider__wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    .image-slider__slide {
+        margin: 0px 24px 16px 4px;
+        width: 224px;
+        height: 72px;
+    }
+    .image-slider__image {
+        width: 224px;
+        height: 72px;
+    }
+    .image-slider__image img {
+        width: 224px;
+        height: 72px;
+    }
+    .brands-content {
+        height: auto;
+    }
+    .button-share {
+        position: relative;
+        display: block;
+        margin: 24px 0 34px 57px;
+        font-family: "TT Lakes Medium";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: #1B1C21;
+        tab-index: 1;
+    }
+    .arrow-down:before {
+        position: absolute;
+        left: -33px;
+        content: url("img/img-for-slider/expand.svg");
+    }
+    .arrow-up:before {
+        position: absolute;
+        left: -33px;
+        content: url("img/img-for-slider/expand.svg");
+        transform: rotate(180deg)
+        translateY(6px);
+    }
+    .button-share button {
+        border: none;
+        outline: none;
+        background-color: #F8F8F8;
+        padding: 0px;
+        font-family: "TT Lakes Medium";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: #1B1C21;
+    }
+    .swiper-hide {
+        display: none;
+    }
+    .button-share:hover {
+        opacity: 0.5;
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+    .image-slider__slide:hover .image-slider__image a img{
+        filter: blur(2px);
+        transition-duration: 2s;
+    }
+}
+@media (min-width: 1120px) {
+    .brands {
+        width: 1120px;
+    }
+    .image-slider__slide {
+        margin: 0px 32px 16px 4px;
+        width: 240px;
+        height: 72px;
+    }
+    .image-slider__image {
+        width: 240px;
+        height: 72px;
+    }
+    .image-slider__image img {
+        width: 240px;
+        height: 72px;
+    }
 }
